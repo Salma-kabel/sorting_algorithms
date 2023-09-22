@@ -26,6 +26,6 @@ void selection_sort(int *array, size_t size)
 			array[tmp] = tmp2;
 			print_array(array, size);
 		}
-		tmp = i + 1;	
+		tmp = i + 1;
 	}
 }
