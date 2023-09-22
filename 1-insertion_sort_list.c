@@ -1,5 +1,11 @@
 #include "sort.h"
 
+/**
+ * insertion_sort_list - sorts a doubly linked list
+ * of integers in ascending order
+ * @list: list to sort
+ */
+
 void insertion_sort_list(listint_t **list)
 {
     listint_t *current, *next_node;
