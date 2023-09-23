@@ -11,6 +11,8 @@ void shell_sort(int *array, size_t size)
 {
 	int h = 1, swap = 1, tmp, k, j;
 
+	if (array == NULL || size <= 0)
+		return;
 	while ((h * 3 + 1) < (int)size)
 		h = h * 3 + 1;
 	while (h > 1)
