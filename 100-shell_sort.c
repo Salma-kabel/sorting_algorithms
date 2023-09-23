@@ -9,7 +9,7 @@
 
 void shell_sort(int *array, size_t size)
 {
-	int h = 1, swap = 1, tmp, j;
+	int h = 1, swap = 1, tmp, k, j;
 
 	if (array == NULL || size <= 0)
 		return;
@@ -34,4 +34,18 @@ void shell_sort(int *array, size_t size)
 		print_array(array, size);
 		h = (h - 1) / 3;
 	}
+	j = 1;
+	while (j < (int)size)
+	{
+		k = j;
+		while (k > 0 && array[k] < array[k - 1])
+		{
+			tmp = array[k - 1];
+			array[k - 1] = array[k];
+			array[k] = tmp;
+			k--;
+		}
+		j++;
+	}
+	print_array(array, size);
 }
