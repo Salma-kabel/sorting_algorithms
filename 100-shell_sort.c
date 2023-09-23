@@ -23,7 +23,7 @@ void shell_sort(int *array, size_t size)
             tmp = array[i];
 
             /* Shift earlier gap-sorted elements up until the correct location for array[i] is found */
-            for (j = i; j >= h && array[j - h] > tmp; j -= h)
+            for (j = i; j >= (size_t)h && array[j - h] > tmp; j -= h)
                 array[j] = array[j - h];
 
             /* Put tmp (the original array[i]) in its correct location */
