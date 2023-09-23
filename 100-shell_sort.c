@@ -25,6 +25,7 @@ void shell_sort(int *array, size_t size)
 				if (j + h < (int)size && array[j] > array[j + h])
 				{
 					swap = 1;
+					k = swap;
 					tmp = array[j + h];
 					array[j + h] = array[j];
 					array[j] = tmp;
