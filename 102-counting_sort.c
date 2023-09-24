@@ -11,7 +11,7 @@ void counting_sort(int *array, size_t size)
 {
 	int i, size2 = 0, *arr, *arr2;
 
-	if (array == NULL || size <= 0 || len(array) == 0)
+	if (array == NULL || size <= 0)
 		return;
 	arr2 = malloc(sizeof(int) * size);
 	for (i = 0; i < (int)size; i++)
@@ -29,13 +29,12 @@ void counting_sort(int *array, size_t size)
 	for (i = 0; i < size2; i++)
 	{
 		if (i > 0)
-		{
 			arr[i] = arr[i - 1] + arr[i];
-			printf(", ");
-		}
-		printf("%d", arr[i]);
+		if (i < size2 - 1)
+			printf("%d, ", arr[i]);
+		else
+			printf("%d\n", arr[i]);
 	}
-	printf("\n");
 	for (i = size2 - 1; i >= 0; i--)
 	{
 		if (i == 0)
