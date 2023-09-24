@@ -9,7 +9,7 @@
 
 void merge_sort(int *array, size_t size)
 {
-	size_t i, j = 0, k = 0, size2;
+	size_t i, size2;
 	int *arr;
 
 	if (size == 1)
@@ -26,6 +26,24 @@ void merge_sort(int *array, size_t size)
 	arr = malloc(sizeof(int) * size);
 	if (arr == NULL)
 		return;
+	sort(array, arr, size);
+	for (i = 0; i < size; i++)
+		array[i] = arr[i];
+	free(arr);
+	print(array, size, "Done");
+}
+
+/**
+ * sort - sorts an array
+ * @array: array to sort
+ * @arr: array to save in
+ * @size: size of array
+ */
+
+void sort(int *array, int *arr, size_t size)
+{
+	size_t i, j = 0, k = 0;
+
 	for (i = 0; i < size; i++)
 	{
 		if ((size / 2) + k < size)
@@ -55,10 +73,6 @@ void merge_sort(int *array, size_t size)
 			j++;
 		}
 	}
-	for (i = 0; i < size; i++)
-		array[i] = arr[i];
-	free(arr);
-	print(array, size, "Done");
 }
 
 /**
@@ -70,6 +84,7 @@ void merge_sort(int *array, size_t size)
 void print(int *array, size_t size, char *str)
 {
 	size_t i;
+
 	printf("[%s]: ", str);
 	for (i = 0; i < size; i++)
 	{
