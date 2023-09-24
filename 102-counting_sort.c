@@ -11,7 +11,7 @@ void counting_sort(int *array, size_t size)
 {
 	int i, size2 = 0, *arr, *arr2;
 
-	if (array == NULL || size <= 0)
+	if (array == NULL || size <= 0 || len(array) == 0)
 		return;
 	arr2 = malloc(sizeof(int) * size);
 	for (i = 0; i < (int)size; i++)
