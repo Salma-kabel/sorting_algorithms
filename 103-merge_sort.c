@@ -12,6 +12,8 @@ void merge_sort(int *array, size_t size)
 	size_t i, size2;
 	int *arr;
 
+	if (array == NULL || size == 0)
+		return;
 	if (size == 1)
 		return;
 	if (size % 2 == 0)
