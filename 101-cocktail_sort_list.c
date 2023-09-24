@@ -16,7 +16,7 @@ void cocktail_sort_list(listint_t **list)
 	ptr = *list;
 	while (size > 0)
 	{
-		while (ptr->next != NULL && size != 0)
+		while (ptr->next != NULL && size > 0)
 		{
 			if (count == 0)
 				size++;
@@ -54,7 +54,7 @@ void cocktail_sort_list(listint_t **list)
  */
 listint_t *forward(listint_t **list, listint_t *ptr, int size)
 {
-	while (ptr->prev != NULL && size != 0)
+	while (ptr->prev != NULL && size > 0)
 	{
 		size--;
 		if (ptr->n < ptr->prev->n)
