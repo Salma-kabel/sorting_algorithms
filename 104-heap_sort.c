@@ -15,6 +15,52 @@ void heap_sort(int *array, size_t size)
 	if (array == NULL || size <= 0)
 		return;
 	i = size - 1;
+	initial_sort(array, i, size);
+	size2 = size;
+	while (size > 1)
+	{
+		tmp = array[size - 1];
+		array[size - 1] = array[0];
+		array[0] = tmp;
+		print_array(array, size2);
+		size--;
+		i = 0;
+		j = 2 * i + 1;
+		while ((j < size && array[i] < array[j]) ||
+				(j + 1 < size && array[i] < array[j + 1]))
+		{
+			tmp = array[i];
+			if (j + 1 < size && array[i] < array[j + 1])
+			{
+				if (j < size)
+				{
+					if (array[j + 1] > array[j])
+						j = j + 1;
+				}
+				else
+					j = j + 1;
+			}
+			array[i] = array[j];
+			array[j] = tmp;
+			print_array(array, size2);
+			i = j;
+			j = 2 * i + 1;
+		}
+	}
+}
+
+/**
+ * initial_sort - makes every parent bigger than its children
+ * @array: array to sort
+ * @i: counter
+ * @size: size of array
+ */
+
+void initial_sort(int *array, size_t i, size_t size)
+{
+	size_t j;
+	int tmp;
+
 	while (i > 0)
 	{
 		j = (i - 1) / 2;
@@ -36,35 +82,5 @@ void heap_sort(int *array, size_t size)
 		}
 		else
 			i--;
-	}
-	size2 = size;
-	while (size > 1)
-	{
-		tmp = array[size - 1];
-		array[size - 1] = array[0];
-		array[0] = tmp;
-		print_array(array, size2);
-		size--;
-		i = 0;
-		j = 2 * i + 1;
-		while ((j < size && array[i] < array[j]) || ( j + 1 < size && array[i] < array[j + 1]))
-		{
-			tmp = array[i];
-			if (j + 1 < size && array[i] < array[j + 1])
-			{
-				if (j < size)
-				{
-				      if (array[j + 1] > array[j])
-					      j = j + 1;
-				}
-				else
-					j = j + 1;
-			}
-			array[i] = array[j];
-			array[j] = tmp;
-			print_array(array, size2);
-			i = j;
-			j = 2 * i + 1;
-		}
 	}
 }

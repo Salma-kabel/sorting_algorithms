@@ -51,4 +51,5 @@ void merge_sort(int *array, size_t size);
 void print(int * array, size_t size, char *str);
 void sort(int *array, int *arr, size_t size);
 void heap_sort(int *array, size_t size);
+void initial_sort(int * array, size_t i, size_t size);
 #endif
