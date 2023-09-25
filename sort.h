@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <math.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -20,6 +20,23 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * struct tree - tree node
+ * @location: location of element in array
+ * @value: value of element
+ * @left: Pointer to the left element of the tree
+ * @right: pointer to the right element of the tree
+ */
+
+typedef struct tree
+{
+        int location;
+	int value;
+	struct tree *parent;
+        struct tree *left;
+        struct tree *right;
+}tree;
+
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
@@ -33,4 +50,5 @@ void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void print(int * array, size_t size, char *str);
 void sort(int *array, int *arr, size_t size);
+void heap_sort(int *array, size_t size);
 #endif
