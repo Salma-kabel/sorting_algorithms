@@ -57,7 +57,6 @@ listint_t *forward(listint_t **list, listint_t *ptr, int size)
 {
 	while (ptr != NULL && ptr->prev != NULL && size > 0)
 	{
-		size--;
 		if (ptr->n < ptr->prev->n)
 		{
 			if (ptr->prev->prev == NULL)
