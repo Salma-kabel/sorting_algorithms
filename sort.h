@@ -30,11 +30,10 @@ typedef struct listint_s
 
 typedef struct tree
 {
-        int location;
+	int location;
 	int value;
-	struct tree *parent;
-        struct tree *left;
-        struct tree *right;
+	struct tree *left;
+	struct tree *right;
 }tree;
 
 void print_array(const int *array, size_t size);
